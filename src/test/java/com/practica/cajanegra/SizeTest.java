@@ -3,7 +3,7 @@ package com.practica.cajanegra;
 
 import com.cajanegra.AbstractSingleLinkedListImpl;
 import com.cajanegra.SingleLinkedListImpl;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,33 +12,35 @@ public class SizeTest {
 
     AbstractSingleLinkedListImpl<String> list;
 
-    @BeforeEach
+    //No funciona pero deberia
+    @BeforeEach()
     public void setup(){
-        this.list = new SingleLinkedListImpl<>();
+        list = new SingleLinkedListImpl<>();
     }
+
 
     //List is empty
     @Test
-    public void testListEmpty(){
-        assertEquals(0, this.list.size());
+    public void testEmpty(){
+        list = new SingleLinkedListImpl<>();
+        assertEquals(0, list.size());
     }
 
     //List is null
     @Test
-    public void testListNull(){
-        this.list = null;
-        Exception exception = assertThrows(java.lang.NullPointerException.class, () -> this.list.size());
-        assertEquals(java.lang.NullPointerException.class, exception.getClass());
+    public void testNull(){
+        list = null;
+        assertEquals(0, list.size());
+        //Conseguir recoger la excepcion
+        //assertThrows(NullPointerException, list.size())
     }
 
     //List has values
     @Test
-    public void testListNormal(){
-        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        assertEquals(5, this.list.size());
+    public void testNormal(){
+        list = new SingleLinkedListImpl<>();
+        list.addNTimes("a", 5);
+        assertEquals(5, list.size());
     }
 
 }
-
-//Variable a probar: la lista sobre la que se ejecuta la funcion
-//Clase de equivalencia: lista null, lista vacía, lista estandar
