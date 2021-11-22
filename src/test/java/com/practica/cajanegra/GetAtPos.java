@@ -33,13 +33,13 @@ public class GetAtPos {
 
     @Test
     public void InvalidIndexZeroLengthList(){
-        int index = -1;
+        int index = 0;
         this.list.getAtPos(index);
     }
 
     @Test
     public void IndexOutOfBoundsZeroLengthList(){
-        int index = 0;
+        int index = 1;
         this.list.getAtPos(index);
 
     }
@@ -47,14 +47,14 @@ public class GetAtPos {
     @Test
     public void InvalidIndexList(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = -1;
+        int index = 0;
         this.list.getAtPos(index);
     }
 
     @Test
     public void IndexOutOfBounds(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = 5;
+        int index = 6;
         this.list.getAtPos(index);
 
     }
@@ -62,7 +62,7 @@ public class GetAtPos {
     @Test
     public void FirstValidIndex(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = 0;
+        int index = 1;
         this.list.getAtPos(index);
 
     }
@@ -70,7 +70,7 @@ public class GetAtPos {
     @Test
     public void LastValidIndex(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = 4;
+        int index = 5;
         this.list.getAtPos(index);
 
     }
@@ -78,7 +78,7 @@ public class GetAtPos {
     @Test
     public void MiddleValidIndex(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = 2;
+        int index = 3;
         this.list.getAtPos(index);
 
     }
@@ -91,10 +91,10 @@ public class GetAtPos {
 //Parámetros:
 //
 //Indice.
-//  Indice,type != int (no compila)
-//  Indice < 0
-//  Indice > lista.length
-//  0 <= Indice < lista.length
+//  Indice.type != int (no compila)
+//  Indice < 1
+//  Indice >= lista.length
+//  1 <= Indice <= lista.length
 //      En este caso se prueba para Indice = 0, Indice = lista.length -1 y 1 <= Indice < lista.length-1
 //
 //Lista.
