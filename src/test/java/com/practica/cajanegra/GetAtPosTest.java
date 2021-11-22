@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class GetAtPos {
+public class GetAtPosTest {
 
     AbstractSingleLinkedListImpl<String> list;
 
@@ -83,7 +83,6 @@ public class GetAtPos {
 
     }
 
-
 }
 
 //Clases de equivalencia.
@@ -92,6 +91,7 @@ public class GetAtPos {
 //
 //Indice.
 //  Indice.type != int (no compila)
+//  Indice null (no compila)
 //  Indice < 1
 //  Indice >= lista.length
 //  1 <= Indice <= lista.length
@@ -100,8 +100,8 @@ public class GetAtPos {
 //Lista.
 //  Lista no iniciada (no compila)
 //  Lista nula
-//  Lista de longituz = 0
-//  Lista de longituz > 0
+//  Lista de longitud = 0
+//  Lista de longitud > 0
 //
 //Elemento retornado:
 //

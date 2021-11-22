@@ -1,4 +1,4 @@
-import com.practica.cajanegra.GetAtPos;
+import com.practica.cajanegra.GetAtPosTest;
 import com.practica.cajanegra.IndexOfTest;
 import com.practica.cajanegra.ReverseTest;
 import com.practica.cajanegra.SizeTest;
@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         SizeTest.class,
         ReverseTest.class,
         IndexOfTest.class,
-        GetAtPos.class,
+        GetAtPosTest.class,
 })
 
 public class RunTests {
