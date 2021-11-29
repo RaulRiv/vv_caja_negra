@@ -1,6 +1,4 @@
-import com.practica.cajanegra.IndexOfTest;
-import com.practica.cajanegra.ReverseTest;
-import com.practica.cajanegra.SizeTest;
+import com.practica.cajanegra.*;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
@@ -10,6 +8,9 @@ import org.junit.runner.RunWith;
         SizeTest.class,
         ReverseTest.class,
         IndexOfTest.class,
+        AddFirstTest.class,
+        AddLastTest.class,
+        ToStringTest.class,
 })
 
 public class RunTests {
