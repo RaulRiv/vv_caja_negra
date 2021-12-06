@@ -95,7 +95,7 @@ public class GetAtPosTest {
 
     @Test
     public void MiddleValidIndexForInvalidElement(){
-        this.list = new SingleLinkedListImpl<>("A", "B", "#", "D", "#");
+        this.list = new SingleLinkedListImpl<>("A", "B", "#", "D", "E");
         int index = 3;
         assertEquals("C", this.list.getAtPos(index));
 
