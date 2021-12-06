@@ -22,14 +22,6 @@ public class ReverseTest {
         assertEquals("[]", this.list.reverse().toString());
     }
 
-    //Lista null
-    @Test
-    public void testListNull(){
-        this.list = null;
-        Exception exception = assertThrows(java.lang.NullPointerException.class, () -> this.list.reverse());
-        assertEquals(java.lang.NullPointerException.class, exception.getClass());
-    }
-
     //Lista de un elemento
     @Test
     public void testListOne(){
