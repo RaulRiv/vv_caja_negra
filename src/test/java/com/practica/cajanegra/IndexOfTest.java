@@ -28,7 +28,7 @@ public class IndexOfTest {
     //El elemento no es valido
     @Test
     public void testElemNotValid(){
-        this.list = new SingleLinkedListImpl<>("A", "B", "c", "D", "E");
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
         assertThrows(java.util.NoSuchElementException.class, () -> this.list.indexOf("0"));
     }
 
