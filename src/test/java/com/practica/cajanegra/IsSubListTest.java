@@ -83,28 +83,3 @@ public class IsSubListTest {
         assertEquals(-1, this.list.isSubList(part));
     }
 }
-
-//Clases de equivalencia.
-//
-//Parámetros:
-//
-//Lista:
-//  Lista nula (no se prueba Raul sabe por qué)
-//  Lista de longitud = 0
-//  Lista de longitud > 0
-//
-//Sublista:
-//  Sublista nula (no se prueba Raul sabe por qué)
-//  Sublista de longitud = 0
-//  Sublista de longitud > 0 y <= lista.length
-//      En este caso ha de probarse para longitud = 1, longitud = lista.length y una longitud intermedia
-//  Sublista de longitud > lista.length
-//
-//Pertenece:
-//  La sublista pertenece a la lista
-//  La sublista no pertenece a la lista
-//    En este caso hay que probar para: (Hacemos un solo caso)
-//      Coinciden 0 elementos
-//      Coinciden un número entre 1 y sublista.length-2 elementos
-//      Coinciden sublista.length-1 elementos
-//

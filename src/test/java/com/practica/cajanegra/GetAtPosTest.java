@@ -69,25 +69,36 @@ public class GetAtPosTest {
 
     }
 
-}
+    @Test
+    public void MiddleValidIndexForValidElement(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        int index = 5;
+        assertEquals("C", this.list.getAtPos(index));
 
-//Clases de equivalencia.
-//
-//Parámetros:
-//
-//Indice.
-//  Indice.type != int (no compila)
-//  Indice null (no compila)
-//  Indice < 1
-//  Indice >= lista.length
-//  1 <= Indice <= lista.length
-//      En este caso se prueba para Indice = 0, Indice = lista.length y 1 <= Indice <= lista.length -1
-//
-//Lista.
-//  Lista no iniciada (no compila)
-//  Lista nula (no se prueba Raul sabe por qué)
-//  Lista de longitud = 0
-//  Lista de longitud > 0
-//
-//Elemento retornado:
-//
+    }
+
+    @Test
+    public void FirstValidIndexForInvalidElement(){
+        this.list = new SingleLinkedListImpl<>("#", "B", "C", "D", "E");
+        int index = 1;
+        assertEquals("C", this.list.getAtPos(index));
+
+    }
+
+    @Test
+    public void LastValidIndexForInvalidElement(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "#");
+        int index = 5;
+        assertEquals("C", this.list.getAtPos(index));
+
+    }
+
+    @Test
+    public void MiddleValidIndexForInvalidElement(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "#", "D", "#");
+        int index = 3;
+        assertEquals("C", this.list.getAtPos(index));
+
+    }
+
+}
