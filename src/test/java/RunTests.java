@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
         AddFirstTest.class,
         AddLastTest.class,
         ToStringTest.class,
+        GetAtPosTest.class,
+        IsSubListTest.class
 })
 
 public class RunTests {

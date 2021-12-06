@@ -4,6 +4,7 @@ import com.cajanegra.AbstractSingleLinkedListImpl;
 import com.cajanegra.SingleLinkedListImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IsSubListTest {
 
@@ -16,62 +17,70 @@ public class IsSubListTest {
         this.part = new SingleLinkedListImpl<>();
     }
 
-    //set
-    @Test
-    public void ListaNulaSublistaNula(){
-        this.list = null;
-        this.part = null;
-    }
-
-    @Test
-    public void ListaLongitudCeroSublistaNula(){
-        this.part = null;
-    }
-
-    @Test
-    public void ListaSublistaNula(){
-        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        this.part = null;
-    }
-
-    //set
-    @Test
-    public void ListaNulaSublistaDeLongitudCero(){
-        this.list = null;
-    }
-
     @Test
     public void ListaLongitudCeroSublistaDeLongitudCero(){
-
+        assertEquals(0, this.list.isSubList(part));
     }
 
     @Test
-    public void ListaSublistaDeLongitudCero(){
+    public void SublistaDeLongitudCero(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-    }
-
-    //set
-
-    @Test
-    public void ListaNulaSublistaDeLongitudMayorQueLaLista(){ //elimiar?
-        this.list = null;
-        this.part = new SingleLinkedListImpl<>("A");
+        assertEquals(0, this.list.isSubList(part));
     }
 
     @Test
     public void ListaLongitudCeroSublistaDeLongitudMayorQueLaLista(){
         this.part = new SingleLinkedListImpl<>("A");
+        assertEquals(-1, this.list.isSubList(part));
     }
 
     @Test
-    public void ListaSublistaDeLongitudMayorQueLaLista(){
+    public void SublistaDeLongitudMayorQueLaLista(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
         this.part = new SingleLinkedListImpl<>("A", "B", "C", "D", "E", "F");
+        assertEquals(-1, this.list.isSubList(part));
     }
 
-    //set
     @Test
-    public void ListaSublistaDeLongitudMayorQueLaLista() {
+    public void SublistaDeLongitudValidaMinimaPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>("B");
+        assertEquals(2, this.list.isSubList(part));
+    }
+
+    @Test
+    public void SublistaDeLongitudValidaMinimaNoPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>("F");
+        assertEquals(-1, this.list.isSubList(part));
+    }
+
+    @Test
+    public void SublistaDeLongitudValidaMaximaPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        assertEquals(1, this.list.isSubList(part));
+    }
+
+    @Test
+    public void SublistaDeLongitudValidaMaximaNoPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>("B", "C", "D", "E", "A");
+        assertEquals(-1, this.list.isSubList(part));
+    }
+
+    @Test
+    public void SublistaDeLongitudValidaPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>( "C", "D", "E");
+        assertEquals(3, this.list.isSubList(part));
+    }
+
+    @Test
+    public void SublistaDeLongitudValidaNoPertence(){
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>( "C", "E", "D");
+        assertEquals(-1, this.list.isSubList(part));
     }
 }
 
@@ -80,12 +89,12 @@ public class IsSubListTest {
 //Parámetros:
 //
 //Lista:
-//  Lista nula
+//  Lista nula (no se prueba Raul sabe por qué)
 //  Lista de longitud = 0
 //  Lista de longitud > 0
 //
 //Sublista:
-//  Sublista nula
+//  Sublista nula (no se prueba Raul sabe por qué)
 //  Sublista de longitud = 0
 //  Sublista de longitud > 0 y <= lista.length
 //      En este caso ha de probarse para longitud = 1, longitud = lista.length y una longitud intermedia
@@ -94,8 +103,8 @@ public class IsSubListTest {
 //Pertenece:
 //  La sublista pertenece a la lista
 //  La sublista no pertenece a la lista
-//    En este caso hay que probar para:
+//    En este caso hay que probar para: (Hacemos un solo caso)
 //      Coinciden 0 elementos
-//      Coinciden un número entre 1 y sublista.length-2 elementos (ambos incluidos)
+//      Coinciden un número entre 1 y sublista.length-2 elementos
 //      Coinciden sublista.length-1 elementos
 //
