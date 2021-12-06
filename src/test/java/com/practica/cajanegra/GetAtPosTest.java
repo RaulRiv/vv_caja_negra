@@ -17,24 +17,9 @@ public class GetAtPosTest {
     }
 
     @Test
-    public void InvalidIndexNullList(){
-        this.list = null;
-        int index = -1;
-        this.list.getAtPos(index);
-    }
-
-    @Test
-    public void ValidIndexNullList(){
-        this.list = null;
-        int index = 0;
-        this.list.getAtPos(index);
-
-    }
-
-    @Test
     public void InvalidIndexZeroLengthList(){
         int index = 0;
-        this.list.getAtPos(index);
+        assertThrows(this.list.getAtPos(index), java.lang.IllegalArgumentException);
     }
 
     @Test
@@ -95,7 +80,7 @@ public class GetAtPosTest {
 //  Indice < 1
 //  Indice >= lista.length
 //  1 <= Indice <= lista.length
-//      En este caso se prueba para Indice = 0, Indice = lista.length -1 y 1 <= Indice < lista.length-1
+//      En este caso se prueba para Indice = 0, Indice = lista.length y 1 <= Indice <= lista.length -1
 //
 //Lista.
 //  Lista no iniciada (no compila)
