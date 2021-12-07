@@ -12,7 +12,9 @@ import org.junit.runner.RunWith;
         AddLastTest.class,
         ToStringTest.class,
         GetAtPosTest.class,
-        IsSubListTest.class
+        IsSubListTest.class,
+        AddAtPosTest.class,
+        AddNTimesTest.class
 })
 
 public class RunTests {
