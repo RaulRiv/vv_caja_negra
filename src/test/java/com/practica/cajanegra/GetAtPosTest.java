@@ -70,18 +70,10 @@ public class GetAtPosTest {
     }
 
     @Test
-    public void MiddleValidIndexForValidElement(){
-        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        int index = 5;
-        assertEquals("C", this.list.getAtPos(index));
-
-    }
-
-    @Test
     public void FirstValidIndexForInvalidElement(){
         this.list = new SingleLinkedListImpl<>("#", "B", "C", "D", "E");
         int index = 1;
-        assertEquals("C", this.list.getAtPos(index));
+        assertEquals(Exception.class, this.list.getAtPos(index));
 
     }
 
@@ -89,7 +81,7 @@ public class GetAtPosTest {
     public void LastValidIndexForInvalidElement(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "#");
         int index = 5;
-        assertEquals("C", this.list.getAtPos(index));
+        assertEquals(Exception.class, this.list.getAtPos(index));
 
     }
 
@@ -97,7 +89,7 @@ public class GetAtPosTest {
     public void MiddleValidIndexForInvalidElement(){
         this.list = new SingleLinkedListImpl<>("A", "B", "#", "D", "E");
         int index = 3;
-        assertEquals("C", this.list.getAtPos(index));
+        assertEquals(Exception.class, this.list.getAtPos(index));
 
     }
 

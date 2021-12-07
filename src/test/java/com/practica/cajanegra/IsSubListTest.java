@@ -72,14 +72,14 @@ public class IsSubListTest {
     @Test
     public void SublistaDeLongitudValidaPertence(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        this.part = new SingleLinkedListImpl<>( "C", "D", "E");
+        this.part = new SingleLinkedListImpl<>("C", "D", "E");
         assertEquals(3, this.list.isSubList(part));
     }
 
     @Test
     public void SublistaDeLongitudValidaNoPertence(){
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
-        this.part = new SingleLinkedListImpl<>( "C", "E", "D");
+        this.part = new SingleLinkedListImpl<>("C", "E", "D");
         assertEquals(-1, this.list.isSubList(part));
     }
 }
