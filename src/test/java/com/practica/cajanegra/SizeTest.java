@@ -23,6 +23,14 @@ public class SizeTest {
         assertEquals(0, this.list.size());
     }
 
+    //List is null
+    @Test
+    public void testListNull(){
+        this.list = null;
+        Exception exception = assertThrows(java.lang.NullPointerException.class, () -> this.list.size());
+        assertEquals(java.lang.NullPointerException.class, exception.getClass());
+    }
+
     //List has values
     @Test
     public void testListNormal(){
