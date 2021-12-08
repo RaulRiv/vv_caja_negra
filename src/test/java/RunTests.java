@@ -8,10 +8,13 @@ import org.junit.runner.RunWith;
         SizeTest.class,
         ReverseTest.class,
         IndexOfTest.class,
-        RemoveLastParamTest.class,
-        RemoveLastTest.class,
-        IsEmptyTest.class,
-
+        AddFirstTest.class,
+        AddLastTest.class,
+        ToStringTest.class,
+        GetAtPosTest.class,
+        IsSubListTest.class,
+        AddAtPosTest.class,
+        AddNTimesTest.class
 })
 
 public class RunTests {
