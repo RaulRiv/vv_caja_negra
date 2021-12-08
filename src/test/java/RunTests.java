@@ -14,7 +14,10 @@ import org.junit.runner.RunWith;
         GetAtPosTest.class,
         IsSubListTest.class,
         AddAtPosTest.class,
-        AddNTimesTest.class
+        AddNTimesTest.class,
+        IsEmptyTest.class,
+        RemoveLastTest.class,
+        RemoveLastParamTest.class,
 })
 
 public class RunTests {
