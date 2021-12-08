@@ -2,15 +2,14 @@ package com.practica.cajanegra;
 
 import com.cajanegra.AbstractSingleLinkedListImpl;
 import com.cajanegra.SingleLinkedListImpl;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.provider.CsvSource;
 
-@DisplayName("AddAtPos - Inserta el elemento en la posición p, desplazando los elementos a partir de esa posición. " +
-        "Si la lista tiene menos de p elementos lo insertará como último elemento")
+@DisplayName("AddAtPos - Inserta el elemento en la posición p, desplazando los elementos a partir de esa posición. Si la lista tiene menos de p elementos lo insertará como último elemento")
 public class AddAtPosTest {
 
     AbstractSingleLinkedListImpl<String> list;
@@ -33,8 +32,8 @@ public class AddAtPosTest {
     @ParameterizedTest
     public void testCp2(int position, String element){
         list.addAtPos(element, position);
-        Assert.assertEquals(1, list.size());
-        Assert.assertEquals(element, list.getAtPos(1));
+        assertEquals(1, list.size());
+        assertEquals(element, list.getAtPos(1));
     }
 
     @DisplayName("CP 3 - Si p es 1 y la lista tiene 1 elemento añade el elemento en la primera posición " +
@@ -45,9 +44,9 @@ public class AddAtPosTest {
         list.addAtPos("R", 1);
         list.addAtPos(element, position);
 
-        Assert.assertEquals(2, list.size());
-        Assert.assertEquals(element, list.getAtPos(1));
-        Assert.assertEquals("R", list.getAtPos(2));
+        assertEquals(2, list.size());
+        assertEquals(element, list.getAtPos(1));
+        assertEquals("R", list.getAtPos(2));
     }
 
     @DisplayName("CP 4 - Si p es 3 (mayor que la longitud) y la lista tiene 1 elemento añade el elemento " +
@@ -58,8 +57,8 @@ public class AddAtPosTest {
         list.addAtPos("R", 1);
         list.addAtPos(element, position);
 
-        Assert.assertEquals(2, list.size());
-        Assert.assertEquals("R", list.getAtPos(1));
-        Assert.assertEquals(element, list.getAtPos(2));
+        assertEquals(2, list.size());
+        assertEquals("R", list.getAtPos(1));
+        assertEquals(element, list.getAtPos(2));
     }
 }

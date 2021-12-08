@@ -29,21 +29,21 @@ public class RemoveLastParamTest {
     @Test
     public void testElemNotValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
-        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("a"));
+        assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("a"));
     }
 
     //El elemento no es valido y está
     @Test
     public void testElemNotValidIn() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("a");
-        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("a"));
+        assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("a"));
     }
 
     //El elemento sí es válido y no está
     @Test
     public void testElemValidNotIn() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
-        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("B"));
+        assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("B"));
     }
 
     //El elemento sí es válido y está
@@ -57,14 +57,14 @@ public class RemoveLastParamTest {
     @Test
     public void testElemNotValidNotInStandardList() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "D", "B", "C", "D", "E");
-        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("e"));
+        assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("e"));
     }
 
     //Buscar elemento no válido en lista estándar si está
     @Test
     public void testElemNotValidInStandardList() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "D", "B", "e", "D", "E");
-        assertEquals(Exception.class, this.list.removeLast("e"));
+        assertThrows(Exception.class, () -> this.list.removeLast("e"));
     }
 
     //Está el elemento buscado
@@ -85,7 +85,7 @@ public class RemoveLastParamTest {
     @Test
     public void testElemValidNotInStandardList() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "D", "B", "C", "D", "C");
-        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("H"));
+        assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("H"));
     }
 
 }
