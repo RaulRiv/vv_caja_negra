@@ -16,14 +16,6 @@ public class IsEmptyTest {
         this.list = new SingleLinkedListImpl<>();
     }
 
-    // Lista inicializada a null
-    @Test
-    public void testListNull(){
-        this.list = null;
-        Exception exception = assertThrows(java.lang.NullPointerException.class, () -> this.list.isEmpty());
-        assertEquals(java.lang.NullPointerException.class, exception.getClass());
-    }
-
     // Lista vacía
     @Test
     public void testListEmpty(){
@@ -47,4 +39,4 @@ public class IsEmptyTest {
 }
 
 //Variable a probar: la lista sobre la que se ejecuta la funcion
-//Clase de equivalencia: lista null, lista vacía, lista de uno, lista estandar
+//Clase de equivalencia: lista vacía, lista de uno, lista estandar

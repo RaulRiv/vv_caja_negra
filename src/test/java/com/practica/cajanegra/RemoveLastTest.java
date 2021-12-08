@@ -18,27 +18,11 @@ public class RemoveLastTest {
         this.list = new SingleLinkedListImpl<>();
     }
 
-    // Lista inicializada a null
-    @Test
-    public void testListNull() {
-        this.list = null;
-        Exception exception = assertThrows(java.lang.NullPointerException.class, () -> this.list.removeLast());
-        assertEquals(java.lang.NullPointerException.class, exception.getClass());
-    }
-
     // Lista vacía
     @Test
     public void testListEmpty(){
-        Exception exception = assertThrows(com.cajanegra.EmptyCollectionException, () -> this.list.removeLast());
-        assertEquals(com.cajanegra.EmptyCollectionException,exception.getClass());
-    }
-
-    //El elemento no es valido
-    @Test
-    public void testElemNotValid() {
-        this.list = new SingleLinkedListImpl<>("c");
-        Exception exception = assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast());
-        assertEquals(java.util.NoSuchElementException.class, exception.getClass());
+        Exception exception = assertThrows(com.cajanegra.EmptyCollectionException.class, () -> this.list.removeLast());
+        assertEquals(com.cajanegra.EmptyCollectionException.class,exception.getClass());
     }
 
     //El elemento sí es válido
@@ -46,22 +30,6 @@ public class RemoveLastTest {
     public void testElemValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
         assertEquals("A", this.list.removeLast());
-    }
-
-    // Hay un elemento no válido
-    @Test
-    public void testAnyElemNotValid() {
-        this.list = new SingleLinkedListImpl<>("A", "B", "c", "D", "E");
-        Exception exception = assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast());
-        assertEquals(java.util.NoSuchElementException.class, exception.getClass());
-    }
-
-    //El último elemento no es valido
-    @Test
-    public void testLastElemNotValid() {
-        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "e");
-        Exception exception = assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast());
-        assertEquals(java.util.NoSuchElementException.class, exception.getClass());
     }
 
     // Lista estándar
@@ -72,6 +40,6 @@ public class RemoveLastTest {
     }
 }
 
-//Variables a probar: el elemento que se pasa, la lista sobre la que se ejecuta la funcion
-//Clase de equivalencia 1: el único elemento no válido, el único elemento válido, existe un elemento no válido, el último elemento es no válido
-//Clase de equivalencia 2: lista null, lista vacía, lista con un elemento, lista estandar
+//Variables a probar: la lista sobre la que se ejecuta la funcion
+//Clase de equivalencia 1: el único elemento válido, el último elemento es válido
+//Clase de equivalencia 2: lista vacía, lista con un elemento, lista estandar
