@@ -32,14 +32,28 @@ public class RemoveLastTest {
         assertEquals("A", this.list.removeLast());
     }
 
-    // Lista estándar
+    //El elemento no es válido
     @Test
-    public void testStandardList() throws EmptyCollectionException {
+    public void testElemNotValid() throws EmptyCollectionException {
+        this.list = new SingleLinkedListImpl<>("a");
+        assertEquals(Exception.class, this.list.removeLast());
+    }
+
+    // Lista estándar con último elemento válido
+    @Test
+    public void testStandardListValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
         assertEquals("E", list.removeLast());
     }
+
+    // Lista estándar con último elemento no válido
+    @Test
+    public void testStandardListNotValid() throws EmptyCollectionException {
+        this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "e");
+        assertEquals(Exception.class, list.removeLast());
+    }
 }
 
-//Variables a probar: la lista sobre la que se ejecuta la funcion
-//Clase de equivalencia 1: el único elemento válido, el último elemento es válido
+//Variables a probar: la lista sobre la que se ejecuta la funcion, el elemento que devuleve
+//Clase de equivalencia 1: el único elemento válido, el único elemento no válido, el último elemento es válido, el último elemento no es válido
 //Clase de equivalencia 2: lista vacía, lista con un elemento, lista estandar

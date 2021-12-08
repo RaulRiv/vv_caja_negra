@@ -21,16 +21,22 @@ public class RemoveLastParamTest {
     // Lista vacía
     @Test
     public void testListEmpty(){
-        Exception exception = assertThrows(com.cajanegra.EmptyCollectionException.class, () -> this.list.removeLast("A"));
-        assertEquals(com.cajanegra.EmptyCollectionException.class,exception.getClass());
+        Exception exception = assertThrows(EmptyCollectionException.class, () -> this.list.removeLast("A"));
+        assertEquals(EmptyCollectionException.class,exception.getClass());
     }
 
-    //El elemento no es valido
+    //El elemento no es valido y no está
     @Test
-    public void testElemNotValid() {
+    public void testElemNotValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
-        Exception exception = assertThrows(java.util.NoSuchElementException.class, () -> this.list.removeLast("a"));
-        assertEquals(java.util.NoSuchElementException.class, exception.getClass());
+        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("a"));
+    }
+
+    //El elemento no es valido y está
+    @Test
+    public void testElemNotValidIn() throws EmptyCollectionException {
+        this.list = new SingleLinkedListImpl<>("a");
+        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("a"));
     }
 
     //El elemento sí es válido y no está
@@ -45,6 +51,20 @@ public class RemoveLastParamTest {
     public void testElemValidIn() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
         assertEquals("A", this.list.removeLast("A"));
+    }
+
+    //Buscar elemento no válido en lista estándar no está
+    @Test
+    public void testElemNotValidNotInStandardList() throws EmptyCollectionException {
+        this.list = new SingleLinkedListImpl<>("A", "D", "B", "C", "D", "E");
+        assertEquals(java.util.NoSuchElementException.class, this.list.removeLast("e"));
+    }
+
+    //Buscar elemento no válido en lista estándar si está
+    @Test
+    public void testElemNotValidInStandardList() throws EmptyCollectionException {
+        this.list = new SingleLinkedListImpl<>("A", "D", "B", "e", "D", "E");
+        assertEquals(Exception.class, this.list.removeLast("e"));
     }
 
     //Está el elemento buscado
@@ -72,5 +92,5 @@ public class RemoveLastParamTest {
 
 
 //Variables a probar: el elemento que se pasa como parámetro, la lista sobre la que se ejecuta la funcion
-//Clase de equivalencia 1: el elemento no válido, el elemento válido y no está, el elemento válido y está, existe elemento buscado, hay varios elemntos bucados, el elemento no está
+//Clase de equivalencia 1: el elemento no válido, el elemento válido y no está, el elemento válido y está, buscar elemento no válido en lista estandar(no esté),buscar elemento no válido en lista estandar(si esté), existe elemento buscado, hay varios elemntos bucados, el elemento no está
 //Clase de equivalencia 2: lista vacía, lista con un elemento, lista estandar
