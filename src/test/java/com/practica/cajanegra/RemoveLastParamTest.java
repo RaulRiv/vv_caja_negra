@@ -51,6 +51,7 @@ public class RemoveLastParamTest {
     public void testElemValidIn() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
         assertEquals("A", this.list.removeLast("A"));
+        assertEquals("[]", list.toString());
     }
 
     //Buscar elemento no válido en lista estándar no está
@@ -72,6 +73,7 @@ public class RemoveLastParamTest {
     public void testElemValidInAnyPos() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "C", "B", "C", "D", "C");
         assertEquals("D", this.list.removeLast("D"));
+        assertEquals("[A, C, B, C, C]", list.toString());
     }
 
     //Hay varios elementos buscados
@@ -79,6 +81,7 @@ public class RemoveLastParamTest {
     public void testSomeValidElem() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "D", "B", "C", "D", "C");
         assertEquals("D", this.list.removeLast("D"));
+        assertEquals("[A, D, B, C, C]", list.toString());
     }
 
     //El elemento no está en lista estándar

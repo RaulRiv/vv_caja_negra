@@ -30,6 +30,7 @@ public class RemoveLastTest {
     public void testElemValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A");
         assertEquals("A", this.list.removeLast());
+        assertEquals("[]", list.toString());
     }
 
     //El elemento no es válido
@@ -44,6 +45,7 @@ public class RemoveLastTest {
     public void testStandardListValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "E");
         assertEquals("E", list.removeLast());
+        assertEquals("[A, B, C, D]", list.toString());
     }
 
     // Lista estándar con último elemento no válido
