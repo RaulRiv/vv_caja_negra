@@ -37,7 +37,7 @@ public class RemoveLastTest {
     @Test
     public void testElemNotValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("a");
-        assertEquals(Exception.class, this.list.removeLast());
+        assertThrows(Exception.class, () -> this.list.removeLast());
     }
 
     // Lista estándar con último elemento válido
@@ -52,7 +52,7 @@ public class RemoveLastTest {
     @Test
     public void testStandardListNotValid() throws EmptyCollectionException {
         this.list = new SingleLinkedListImpl<>("A", "B", "C", "D", "e");
-        assertEquals(Exception.class, list.removeLast());
+        assertThrows(Exception.class, () -> list.removeLast());
     }
 }
 

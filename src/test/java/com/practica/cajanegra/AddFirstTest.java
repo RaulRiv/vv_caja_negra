@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("Añade un elemento pasado por parámetro al principio de la lista")
+@DisplayName("addFirst - Añade un elemento pasado por parámetro al principio de la lista")
 public class AddFirstTest {
     AbstractSingleLinkedListImpl<String> list;
     @BeforeEach
@@ -30,7 +30,7 @@ public class AddFirstTest {
     @ValueSource(strings={"A","B","M","Y","Z","@","["})
     @ParameterizedTest
     public void test2(String element){
-        String testElement = "foo";
+        String testElement = "A";
         list = new SingleLinkedListImpl<>(testElement);
         list.addFirst(element);
         assertEquals(2, list.size());
@@ -40,8 +40,8 @@ public class AddFirstTest {
     @ValueSource(strings={"A","B","M","Y","Z","@","["})
     @ParameterizedTest
     public void test3(String element){
-        String testElement1 = "foo1";
-        String testElement2 = "foo2";
+        String testElement1 = "A";
+        String testElement2 = "B";
         list = new SingleLinkedListImpl<>(testElement1,testElement2);
         list.addFirst(element);
         assertEquals(3, list.size());
