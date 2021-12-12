@@ -14,4 +14,4 @@ GRUPO IWT-42
   * En primer lugar tener una cuenta de github
   * Solicitar una invitación al administrador de este repositorio
   * Una vez se tenga acceso al mismo clonar el repositorio en un directorio local
-  * Una vez instalado maven, abrir un terminal y ejecutar el comando `mvn test`
+  * Una vez instalado maven, abrir un terminal dentro del directorio del proyecto y ejecutar el comando `mvn test`
