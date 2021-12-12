@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("Añade un elemento pasado por parámetro al final de la lista")
+@DisplayName("addLast - Añade un elemento pasado por parámetro al final de la lista")
 public class AddLastTest {
     AbstractSingleLinkedListImpl<String> list;
     @BeforeEach
@@ -28,7 +28,7 @@ public class AddLastTest {
     @ValueSource(strings={"A","B","M","Y","Z","@","["})
     @ParameterizedTest
     public void addLastToOneElement(String element){
-        String testElement = "foo";
+        String testElement = "A";
         list = new SingleLinkedListImpl<>(testElement);
         list.addLast(element);
         assertEquals(2, list.size());
@@ -38,8 +38,8 @@ public class AddLastTest {
     @ValueSource(strings={"A","B","M","Y","Z","@","["})
     @ParameterizedTest
     public void addLastToVariousElements(String element){
-        String testElement1 = "foo1";
-        String testElement2 = "foo2";
+        String testElement1 = "A";
+        String testElement2 = "B";
         list = new SingleLinkedListImpl<>(testElement1,testElement2);
         list.addLast(element);
         assertEquals(3, list.size());
