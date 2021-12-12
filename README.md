@@ -8,3 +8,10 @@ GRUPO IWT-42
 * Descargar el proyecto utilizando git clone desde el terminal o desde el IDE.
 * Seguir las indicaciones del enunciado para añadir las dependencias necesarias para empezar a realizar las pruebas
 * Modificar este fichero añadiendo el número de grupo correspondiente y las instrucciones para ejecutar la práctica
+
+## Instrucciones para ejecutar los tests
+* Aquellas personas que quieran ejecutar los tests sobre el repositorio deberán:
+  * En primer lugar tener una cuenta de github
+  * Solicitar una invitación al administrador de este repositorio
+  * Una vez se tenga acceso al mismo clonar el repositorio en un directorio local
+  * Una vez instalado maven, abrir un terminal y ejecutar el comando `mvn test`
